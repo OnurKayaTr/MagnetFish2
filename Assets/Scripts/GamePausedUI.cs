@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GamePausedUI : MonoBehaviour
 {
@@ -12,7 +12,6 @@ public class GamePausedUI : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
 
     private bool isPaused;
-    public AddManager reklam;
 
     private void Start()
     {
@@ -85,13 +84,8 @@ public class GamePausedUI : MonoBehaviour
 
     private void RetryGame()
     {
-
-        reklam.LoadInterstitialAd();
-
         Time.timeScale = 1;
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
 
     private void ExitGame()

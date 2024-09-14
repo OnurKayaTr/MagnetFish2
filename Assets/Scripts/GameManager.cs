@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public bool isGamePaused; // Oyun duraklatýldýðýnda true olacak
     private int clickCount;
     private int currentScore = 0;
-    public AddManager reklam;
+    //public AddManager reklam;
     private void Awake()
     {
         Instance = this;
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        reklam.ShowInterstitialAd();
+        //reklam.ShowInterstitialAd();
 
 
         Application.targetFrameRate = 60;
@@ -294,7 +294,7 @@ public class GameManager : MonoBehaviour
 
     private void RetryGame()
     {
-        reklam.LoadInterstitialAd();
+      //  reklam.LoadInterstitialAd();
         isGameOver = false;
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

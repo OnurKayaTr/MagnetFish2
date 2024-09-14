@@ -7,10 +7,10 @@ using GoogleMobileAds;
 
 public class AddManager : MonoBehaviour
 {
-    // These ad units are configured to always serve test ads.
+   /* // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
     //private string _adUnitId = "ca-app-pub-3940256099942544/1033173712";
-    private string _adUnitId = "ca-app-pub-3113601166392986/3879566764";
+   // private string _adUnitId = "ca-app-pub-3113601166392986/3879566764";
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -80,7 +80,7 @@ public class AddManager : MonoBehaviour
             Debug.LogError("Interstitial ad is not ready yet.");
         }
     }
-    
+    */
 
 
 }

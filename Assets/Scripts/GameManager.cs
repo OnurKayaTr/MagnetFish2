@@ -29,17 +29,30 @@ public class GameManager : MonoBehaviour
     public bool isGamePaused; // Oyun duraklatýldýðýnda true olacak
     private int clickCount;
     private int currentScore = 0;
+    private KayitManager levelManager;
     //public AddManager reklam;
+
     private void Awake()
     {
         Instance = this;
-        
+       
+
+
     }
 
     private void Start()
     {
         //reklam.ShowInterstitialAd();
+        // LevelManager bileþenini al
+        //-----
+        levelManager = GetComponent<KayitManager>();
 
+        // Kaydedilen leveli yükle ve oyunu baþlat
+        if (levelManager != null)
+        {
+            levelManager.LoadSavedLevel();
+        }
+        //-----
 
         Application.targetFrameRate = 60;
         if (yellowImage != null)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -11,23 +9,32 @@ public class LevelButton : MonoBehaviour
     public TMP_Text levelText;
     public Image lockedImage;
     public Button button;
+
     private void Start()
     {
         levelText.text = levelId.ToString();
+        UpdateLevelButtonState();  // Buton durumunu güncelle
+    }
+
+    private void UpdateLevelButtonState()
+    {
         if (MainLevelManager.Instance.IsLevelLocked(levelId))
         {
-        lockedImage.gameObject.SetActive(true);
-        button.interactable = false;
+            lockedImage.gameObject.SetActive(true);
+            button.interactable = false;  // Kilitli ise týklanamaz yap
         }
         else
         {
             lockedImage.gameObject.SetActive(false);
-            button.interactable = true;
-
+            button.interactable = true;  // Kilitli deðilse týklanabilir yap
         }
     }
+
     public void OpenLevel()
     {
-        SceneManager.LoadScene("level" + levelId.ToString());
+        if (!MainLevelManager.Instance.IsLevelLocked(levelId))
+        {
+            SceneManager.LoadScene("level" + levelId.ToString());  // Seviyeyi yükle
+        }
     }
 }

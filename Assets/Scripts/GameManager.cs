@@ -30,22 +30,17 @@ public class GameManager : MonoBehaviour
     private int clickCount;
     private int currentScore = 0;
     private KayitManager levelManager;
-    
 
     private void Awake()
     {
+        
+
         Instance = this;
-       
-
-
     }
 
     private void Start()
     {
-       
         levelManager = GetComponent<KayitManager>();
-
-       
 
         Application.targetFrameRate = 60;
         if (yellowImage != null)
@@ -74,7 +69,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
         if (Input.GetMouseButtonDown(0) && !isGameOver && !isGamePaused)
         {
             OnClick();
@@ -106,7 +100,7 @@ public class GameManager : MonoBehaviour
         {
             if (Random.value < 0.9f)
             {
-                var index = Random.Range(0, Mathf.Min(8, settings.PrefabCount));
+                var index = Random.Range(0, Mathf.Min(10, settings.PrefabCount));
                 var spawnPosition = new Vector2(GetInputHorizontalPosition(), spawnPoint.position.y);
                 SpawnFruit(index, spawnPosition);
             }
@@ -296,21 +290,23 @@ public class GameManager : MonoBehaviour
         {
             gameOverLine.gameObject.SetActive(true);
         }
+
+       
     }
 
     private void RetryGame()
     {
-      //  reklam.LoadInterstitialAd();
+        // Reklam baþlatma kodlarý eklenebilir
         isGameOver = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  // Ayný sahneyi yeniden yükle
     }
 
     private void ExitGame()
     {
         Application.Quit();
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;  // Editor'da oynatma durdurulabilir
 #endif
     }
 }

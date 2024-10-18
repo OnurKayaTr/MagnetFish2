@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Button nextLevelButton;
-
     private void Start()
     {
         if (nextLevelButton != null)
@@ -13,7 +12,6 @@ public class LevelManager : MonoBehaviour
             nextLevelButton.onClick.AddListener(LoadNextLevel);
         }
     }
-
     private void LoadNextLevel()
     {
         Time.timeScale = 1; // Yeni seviyeyi yüklemeden önce zamaný sýfýrla

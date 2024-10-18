@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     private int clickCount;
     private int currentScore = 0;
     private KayitManager levelManager;
-    //public AddManager reklam;
+    
 
     private void Awake()
     {
@@ -42,17 +42,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //reklam.ShowInterstitialAd();
-        // LevelManager bileþenini al
-        //-----
+       
         levelManager = GetComponent<KayitManager>();
 
-        // Kaydedilen leveli yükle ve oyunu baþlat
-        if (levelManager != null)
-        {
-            levelManager.LoadSavedLevel();
-        }
-        //-----
+       
 
         Application.targetFrameRate = 60;
         if (yellowImage != null)
@@ -113,7 +106,7 @@ public class GameManager : MonoBehaviour
         {
             if (Random.value < 0.9f)
             {
-                var index = Random.Range(0, Mathf.Min(3, settings.PrefabCount));
+                var index = Random.Range(0, Mathf.Min(8, settings.PrefabCount));
                 var spawnPosition = new Vector2(GetInputHorizontalPosition(), spawnPoint.position.y);
                 SpawnFruit(index, spawnPosition);
             }

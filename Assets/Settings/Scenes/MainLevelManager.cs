@@ -17,7 +17,7 @@ public class MainLevelManager : MonoBehaviour
 
     private void Awake()
     {
-       //PlayerPrefs.DeleteAll();
+      //PlayerPrefs.DeleteAll();
         Instance = this;
         LoadLevels();  // Oyunun baþýnda seviyelerin durumunu yükle
     }

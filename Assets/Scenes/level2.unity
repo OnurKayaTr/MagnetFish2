@@ -4898,6 +4898,7 @@ MonoBehaviour:
   fillImage: {fileID: 1079053075}
   yellowImage: {fileID: 1293389545}
   retryButton: {fileID: 1611178355}
+  Nextlvlbutton: {fileID: 401467048}
   exitButton: {fileID: 1155028311}
   scoreText: {fileID: 1924991450}
   isGamePaused: 0

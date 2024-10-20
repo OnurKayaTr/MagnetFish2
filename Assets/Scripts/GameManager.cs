@@ -21,9 +21,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image fillImage;
     [SerializeField] private Image yellowImage;
     [SerializeField] private Button retryButton;
+    [SerializeField] private Button Nextlvlbutton;
     [SerializeField] private Button exitButton;
     [SerializeField] private TextMeshProUGUI scoreText;
-
+    [SerializeField] private Image Imagesonresim;
     private List<FruitObject> activeFruits = new List<FruitObject>();
     private bool isGameOver;
     public bool isGamePaused; // Oyun duraklatýldýðýnda true olacak
@@ -60,7 +61,12 @@ public class GameManager : MonoBehaviour
 
         if (youWinText != null)
         {
-            youWinText.SetActive(false);  // Baþlangýçta kapalý tut
+            youWinText.SetActive(false);
+            Nextlvlbutton.gameObject.SetActive(false);
+            Imagesonresim.gameObject.SetActive(false);
+
+
+            // Baþlangýçta kapalý tut
         }
 
         // Puanýn baþlangýç deðerini 0 olarak ayarla
@@ -100,7 +106,7 @@ public class GameManager : MonoBehaviour
         {
             if (Random.value < 0.9f)
             {
-                var index = Random.Range(0, Mathf.Min(10, settings.PrefabCount));
+                var index = Random.Range(0, Mathf.Min(7, settings.PrefabCount));
                 var spawnPosition = new Vector2(GetInputHorizontalPosition(), spawnPoint.position.y);
                 SpawnFruit(index, spawnPosition);
             }
@@ -279,6 +285,8 @@ public class GameManager : MonoBehaviour
         if (isWin && youWinText != null)  // Kazanma durumunda "You Win" göster
         {
             youWinText.SetActive(true);
+            Nextlvlbutton.gameObject.SetActive(true);
+            Imagesonresim.gameObject.SetActive(true);
             SoundManager.Instance.PlayYouWinSound();  // You Win sesini çal
         }
         else

@@ -233,6 +233,7 @@ MonoBehaviour:
   fillImage: {fileID: 2072089658}
   yellowImage: {fileID: 1199147859}
   retryButton: {fileID: 101802828}
+  Nextlvlbutton: {fileID: 933827413}
   exitButton: {fileID: 642144346}
   scoreText: {fileID: 1042899136}
   isGamePaused: 0
@@ -2027,7 +2028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &925481337
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         {
             if (Random.value < 0.9f)
             {
-                var index = Random.Range(0, Mathf.Min(7, settings.PrefabCount));
+                var index = Random.Range(0, Mathf.Min(3, settings.PrefabCount));
                 var spawnPosition = new Vector2(GetInputHorizontalPosition(), spawnPoint.position.y);
                 SpawnFruit(index, spawnPosition);
             }
